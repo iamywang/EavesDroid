@@ -55,6 +55,8 @@ Prerequisites:
 
 - `dataset/` contains the dataset used in our paper.
 
+- See `Releases` for downloading the original dataset `dataset.tar.xz `.
+
 - Data in this directory can be used to train classification models and reproduce our results.
 
 **5. Figures**
