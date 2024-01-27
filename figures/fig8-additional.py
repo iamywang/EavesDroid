@@ -1,0 +1,32 @@
+# =============================================================================
+# This file is part of EavesDroid.
+#
+# Author: iamywang
+# Date Created: Jan 27, 2024
+# =============================================================================
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+apps = ['None', 'PiP (play)', 'PiP (pause)', 'music (play)']
+devices = ['OPPO K10', 'Redmi K50']
+accu = [
+    [0.7751, 0.9560, 0.7265, 0.6831], # 0.7781
+    [0.9557, 0.9732, 0.7428, 0.6094] # 0.8156
+]
+
+plt.rc('font', family='Arial', size=20)
+for i in range(4):
+    plt.ylabel('Accuracy')
+    colors = ['tab:blue', 'tab:orange']
+    bar_width = 0.3
+    bar_x = np.arange(len(apps))
+    bar1 = plt.bar(bar_x[i] - bar_width/2 - 0.02, accu[0][i], width=bar_width, color=colors[0], edgecolor='black', hatch='/')
+    bar2 = plt.bar(bar_x[i] + bar_width/2 + 0.02, accu[1][i], width=bar_width, color=colors[1], edgecolor='black', hatch='\\')
+plt.legend((bar1, bar2), devices, fontsize=16, labelspacing=0.2, ncol=2)
+plt.xticks(bar_x, apps, rotation=30)
+plt.ylim(0, 1.3)
+plt.yticks(np.arange(0, 1.5, 0.5))
+plt.tight_layout()
+plt.savefig("../paper/ieee/fig8.pdf", format='pdf')
+plt.close()

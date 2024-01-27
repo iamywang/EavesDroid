@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main_bar_text"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/grey_900"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/main_bar_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_bottom"
+        android:layout_below="@+id/main_bar" />
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/main_bottom_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200" />
+
+
+        <LinearLayout
+            android:id="@+id/main_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/main_button_start"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="trainNetwork"
+                android:text="@string/start_recording"
+                android:textColor="@color/purple_900" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
